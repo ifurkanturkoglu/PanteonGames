@@ -40,29 +40,29 @@ public class Canvas : MonoBehaviour
     }
     void getOpponentsName()
     {   
-        int a = Screen.height-20;
+        int a = Screen.height-30;
 
         GameObject player = new GameObject();
         player.transform.parent = transform;
-        player.transform.position = new Vector3(56f,a,0f);
+        player.transform.position = new Vector3(150f,a,0f);
         player.AddComponent<Text>().name = playerObject.name;
         player.GetComponent<Text>().font = font;
         player.GetComponent<Text>().text = playerObject.name;
         player.GetComponent<Text>().color= Color.red;
-        player.GetComponent<RectTransform>().sizeDelta = new Vector2(110,30);
+        player.GetComponent<RectTransform>().sizeDelta = new Vector2(110,20);
         player.GetComponent<Text>().tag = "Player";
         
         foreach (var item in opponents)
         {   
-            a -=30;
+            a -=10;
             GameObject txt = new GameObject();
             txt.transform.parent = transform;
-            txt.transform.position = new Vector3(56f,a,0f);
+            txt.transform.position = new Vector3(100f,a,0f);
             txt.AddComponent<Text>().name = item.name;
             txt.GetComponent<Text>().font = font;
             txt.GetComponent<Text>().text = item.name;
             txt.GetComponent<Text>().color= Color.red;
-            txt.GetComponent<RectTransform>().sizeDelta = new Vector2(110,30);
+            txt.GetComponent<RectTransform>().sizeDelta = new Vector2(110,20);
             txt.GetComponent<Text>().tag = "opponentText";
         }
         
@@ -91,8 +91,8 @@ public class Canvas : MonoBehaviour
         int a = Screen.height-30;
         foreach (var item in opponentsText)
         {
-            a -=50;
-            item.transform.position = new Vector3(55f,a,0f);
+            a -=20;
+            item.transform.position = new Vector3(150f,a,0f);
         }
         
     }
